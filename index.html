@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend mentor project </title>
+    <link rel="stylesheet" href="rest-countries-api-with-color-theme-switcher-master/Fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <nav>
+            <h1>Where in the World ? </h1>
+            <span>
+                <i class="fa-classic fa-moon"></i>
+                <button id="toggelButton">Dark mode</button>
+            </span>
+        </nav>
+        
+
+
+    <main>
+        <div class="searchBox">
+            <input type="text" id="Search" placeholder="Search for a country...">
+            <select id="filterRegions">
+                <option value="">Filter By Regions</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+
+        <div id="countries-container"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
