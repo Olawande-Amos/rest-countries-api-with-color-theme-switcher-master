@@ -38,10 +38,27 @@ input , select {
     padding: 10px;
 }
 
-#countries-container{
+.flagImage{
+    width: 17rem;
+    height: 9rem;
+   
+    object-fit: cover;
+}
+.countries-info{
+    /* border: 5px solid white; */
+    background-color: var(--white);
+    width: 17rem;
+    height: 17rem;
+
+}
+.country-details{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+#countriesContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+    gap: 1rem;
     padding: 2rem 5rem;
-    margin: 0 auto;
+    margin: 3rem auto;
 }

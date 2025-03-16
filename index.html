@@ -11,7 +11,7 @@
     
         <nav>
             <h1>Where in the World ? </h1>
-            <span>
+            <span id="toggelbutton">
                 <i class="fa-classic fa-moon"></i>
                 <button id="toggelButton">Dark mode</button>
             </span>
@@ -19,21 +19,33 @@
         
 
 
-    <main>
-        <div class="searchBox">
-            <input type="text" id="Search" placeholder="Search for a country...">
-            <select id="filterRegions">
-                <option value="">Filter By Regions</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </div>
+        <main>
+            <div class="searchBox">
+                <input type="text" id="Search" placeholder="Search for a country...">
+                <select id="filterRegions">
+                    <option value="">Filter By Regions</option>
+                    <option value="Africa" id="regionAfrica">Africa</option>
+                    <option value="America">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
 
-        <div id="countries-container"></div>
-    </main>
+            <div id="countriesContainer"></div>
+
+            <div class="modal"  id="modal">
+                <button id="back-button">Back</button>
+                <div id="modal-content"></div>
+
+                <section class="content-holder">
+                   
+                </section>
+            </div>
+        </main>
+
+
+    
 
     <script src="script.js"></script>
 </body>
