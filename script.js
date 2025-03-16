@@ -18,6 +18,10 @@ const getJsonData = async () =>{
 
     const printEachCountry = (data) => {
         const countryContainer = document.querySelector('#countriesContainer')
+        const modal = document.getElementById('modal')
+        console.log(typeof countryContainer);
+        
+     
         let htmlcontent = ''
         data.forEach((jsonObject) => {
             // console.log(jsonObject.borders);
@@ -36,6 +40,8 @@ const getJsonData = async () =>{
             </div>
             `
             countryContainer.innerHTML= htmlcontent
+
+           
         })
     }
 
@@ -108,6 +114,24 @@ const getJsonData = async () =>{
 
     const coutryDisplayRegions = (countryDisplay)=>{
         const contentDisplay = document.querySelector('.content-holder')
+        const countryContainer = document.querySelector('#countriesContainer')
+        const modal = document.getElementById('modal')
+        const backBtn = document.getElementById('back-button')
+
+        countryContainer.onclick = ()=>{
+            countryContainer.style.display = 'none'
+            modal.style.display = 'block'
+            
+        }
+
+        backBtn.onclick = ()=>{
+             countryContainer.style.display = 'grid'
+            modal.style.display = 'none'
+        }
+        // for (let i = 0; i < countryDisplay.length; i++) {
+
+        // }
+
         let displayContent = ''
 
         countryDisplay.forEach((countryDisplay) => {
@@ -138,5 +162,56 @@ const getJsonData = async () =>{
         });
 
     }
+
+
+    const products = [
+        { id: 1, name: "Laptop", category: "Electronics" },
+        { id: 2, name: "Smartphone", category: "Electronics" },
+        { id: 3, name: "Headphones", category: "Accessories" },
+        { id: 4, name: "Keyboard", category: "Accessories" },
+        { id: 5, name: "Monitor", category: "Electronics" }
+      ];
+      
+      const searchInput = document.getElementById('searchInput');
+      const resultsContainer = document.getElementById('results');
+      
+      // Add event listener for input changes
+      searchInput.addEventListener('input', (event) => {
+        const searchTerm = event.target.value.trim().toLowerCase();
+        const filteredProducts = searchProducts(searchTerm);
+        displayResults(filteredProducts);
+      });
+      
+      // Function to filter products
+      function searchProducts(searchTerm) {
+        if (!searchTerm) return products; // Return all products if search term is empty
+      
+        return products.filter(product =>
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.category.toLowerCase().includes(searchTerm)
+        );
+      }
+      
+      // Function to display results
+      function displayResults(filteredProducts) {
+        resultsContainer.innerHTML = ''; // Clear previous results
+      
+        if (filteredProducts.length === 0) {
+          resultsContainer.innerHTML = '<p>No products found.</p>';
+          return;
+        }
+      
+        filteredProducts.forEach(product => {
+          const productElement = document.createElement('div');
+          productElement.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Category: ${product.category}</p>
+          `;
+          resultsContainer.appendChild(productElement);
+        });
+      }
+      
+      // Display all products initially
+      displayResults(products);
   
   

@@ -62,3 +62,6 @@ input , select {
     padding: 2rem 5rem;
     margin: 3rem auto;
 }
+.modal{
+    display: none;
+}
